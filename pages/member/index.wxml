@@ -1,0 +1,38 @@
+<!--pages/member/index.wxml-->
+<auth>
+  <view slot="content">
+    <view class='top'>
+      <image src='{{userInfo.avatar || "../../static/img/default_my.png"}}' class='my-img' mode='aspectFill'></image>
+      <view class='infor'>
+        <view class='name'>{{userInfo.username}}</view>
+        <view class='flag'>{{identity[userInfo.identity]}}</view>
+      </view>
+    </view>
+    <view class='title-box'>付费购买</view>
+    <view class='buy-box'>
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='wrap' bindtap='chooseBuy' data-index='{{index}}'>
+          <view class='item {{buyIndex == index ? "active":""}}'>
+            <view class='money'>¥{{item.price}}</view>
+            <text class='date'>{{item.year}}年</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='title-box'>发票信息</view>
+    <view  class='cell is-link'>
+      <view class='title'>电子普通发票</view>
+      <view class='right' bindtap='chooseFP'>{{type == 0 ? '不开发票' : type == 1 &&  bill.company ? bill.company : "填写发票"}}</view>
+    </view>
+    <view class='pro-box'>
+      支付即视为同意 <text bindtap="goWebviewPage" style="color: #2A8DC5;">《测量软件会员服务协议》</text>  
+    </view>
+    <view class='submit-box'>
+      <button class='submit-btn' bindtap='submit'>立即支付￥{{list[buyIndex].price}}</button>
+    </view>
+  </view>
+</auth>
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

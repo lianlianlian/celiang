@@ -1,0 +1,69 @@
+<!--pages/my/index.wxml-->
+<auth bind:auth="auth" id="auth">
+  <view slot="content">
+    <navigator url='../my-infor/index' hover-class='none' class='top'>
+      <image src='{{userInfo.avatar || "../../static/img/default_my.png"}}' class='my-img' mode='aspectFill'></image>
+      <view class='name flex'>
+        <text>{{userInfo.nickname}}</text>
+        <view class='flag'>{{userInfo.identity_name}}</view>
+      </view>
+      <view class='phone'>{{userInfo.username}}</view>
+    </navigator>
+    <view class='list'>
+      <navigator url='../history/index' class='cell is-link'>
+        <view class='title'>
+          <image class='icon-my' src='../../static/img/icon-m-1.png'></image>
+          <text>测量历史</text>
+        </view>
+      </navigator>
+    </view>
+    <view class='list group'>
+      <navigator url='{{src? ("../webview/index?title=微信支付&src=" + src): "../member/index"}}' class='cell is-link' hidden="{{!showMember}}">
+        <view class='title'>
+          <image class='icon-my' src='../../static/img/icon-m-2.png'></image>
+          <text>我的会员</text>
+        </view>
+        <view class='right' wx:if="{{userInfo.identity == 2}}">{{userInfo.expiration_date}}到期</view>
+      </navigator>
+      <navigator url='../revise-ps/index' class='cell is-link'>
+        <view class='title'>
+          <image class='icon-my' src='../../static/img/icon-m-3.png'></image>
+          <text>修改密码</text>
+        </view>
+      </navigator>
+      <view url='../member/index' class='cell is-link'>
+        <view class='title'>
+          <image class='icon-my' src='../../static/img/icon-m-4.png'></image>
+          <text>绑定微信</text>
+        </view>
+        <view class='right'>
+          <view bindtap='bindWx' data-type='{{userInfo.openid? 2:1}}'>{{userInfo.openid? '已绑定(点击解绑)':'去绑定'}}</view>
+        </view>
+      </view>
+      <view class='cell is-link' bindtap='call'>
+        <view class='title'>
+          <image class='icon-my' src='../../static/img/icon-m-5.png'></image>
+          <text>客服电话</text>
+        </view>
+      </view>
+      <button open-type="contact">
+        <view class='cell is-link' bindtap='call'>
+          <view class='title'>
+            <image class='icon-my' src='../../static/img/icon-m-5.png'></image>
+            <text>在线客服</text>
+          </view>
+        </view>
+      </button>
+      <view class='cell is-link' bindtap='loginout'>
+        <view class='title'>
+          <image class='icon-my' src='../../static/img/icon-m-6.png'></image>
+          <text>退出登录</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</auth>
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

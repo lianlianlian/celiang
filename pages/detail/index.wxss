@@ -1,0 +1,50 @@
+/* pages/detail/index.wxss */
+.top-box{
+  display: flex;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+}
+.top-box .img-box{
+  flex: 1;
+  margin: 10rpx;
+  border: 1px dashed #3699ff;
+  background: #fff;
+}
+.top-box .img-box .img{
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  height: 510rpx;
+}
+.bottom-box{
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+}
+.type-box{
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  line-height: 75rpx;
+  height: 75rpx;
+  text-align: center;
+}
+.type-box .item{
+  flex: 1;
+  margin: 0 10rpx;
+  background: #231c61;
+  border-radius: 15rpx;
+}
+.bottom-box .content{
+  margin: 0 10rpx;
+  padding: 30rpx;
+  border-radius: 15rpx;
+  color: #fff;
+  font-size: 14px;
+  background: #231c61;
+}
+.bottom-box .content .title{
+  font-size: 16px;
+  padding: 10rpx 0 20rpx 0;
+}

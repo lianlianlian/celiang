@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "基本信息",
+  "usingComponents": {
+    "auth": "../../components/auth/index",
+    "x-file-up": "../../components/x-file-up/index"
+  }
+}

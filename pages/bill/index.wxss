@@ -1,0 +1,17 @@
+/* pages/bill/index.wxss */
+.form-item .label{
+  width: 240rpx;
+}
+.submit-box{
+  margin-top: 45rpx;
+}
+.radio{
+  margin-right: 50rpx;
+}
+.radio radio{
+  transform: scale(0.9);
+}
+.radio text{
+  display: inline-block;
+  margin-left: 10rpx;
+}

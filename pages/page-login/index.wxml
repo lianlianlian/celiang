@@ -1,0 +1,14 @@
+<!--pages/page-login/index.wxml-->
+<view class='top login-top'>
+  <text>关节功能测量计算软件</text>
+</view>
+<view class='submit-box'>
+  <navigator url="../login/index" hover-class="none">
+    <button class='submit-btn' form-type="submit">个人用户</button>
+  </navigator>
+</view>
+<view class='submit-box'>
+  <navigator url="../webview/index?title=企业用户&src={{src}}" hover-class="none">
+    <button class='submit-btn' form-type="submit">企业用户</button>
+  </navigator>
+</view>

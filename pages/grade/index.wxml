@@ -1,0 +1,40 @@
+<!--pages/grade/index.wxml-->
+<view class='title'>
+  <view class='item-title'> </view>
+  <view class='item-content'>{{info.row1}}</view>
+  <view class='item-content'>{{info.row2}}</view>
+  <view class='item-content'>{{info.row3}}</view>
+</view>
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <view class='options'>
+    <view class='item-title' bindtap='chooseTitle' data-index='{{index}}'>
+      <text>{{item.titles[item.tapIndex].name}}</text>
+      <view class='down' wx:if="{{item.titles.length > 1}}"></view>
+    </view>
+    <view class='txt' bindtap='goDetail' data-url='../detail/index?src={{item.titles[item.tapIndex].picture_url}}&title={{info.title}}'>查体演示</view>
+    <view class='item-content'><input type='number' value="{{resultArr[index].val1}}" bindinput='input1' data-index='{{index}}'></input></view>
+    <view class='item-content'><input type='number' value="{{resultArr[index].val2}}" bindinput='input2' data-index='{{index}}'></input></view>
+    <view class='item-options' bindtap='chooseCKZ' data-index='{{index}}'><text>{{resultArr[index].val3?resultArr[index].val3:"选择"}}</text><view class='down'></view></view>
+  </view>
+</block>
+<view class='group' wx:if="{{joint == 1}}">
+  <block wx:for="{{remark}}" wx:key="{{index}}">
+    <view class='content'>{{item}}</view>
+  </block>
+</view>
+<view class='group'>
+  <block wx:for="{{result}}" wx:key="{{index}}">
+    <view class='options bottom-options'>
+      <view class='item-title'>{{item}}</view>
+      <view class='item-content'><input type='number' value='{{score[index]}}' disabled></input></view>
+    </view>
+  </block>
+</view>
+<view class='bottom'>
+  <button bindtap='getData'>计算</button>
+  <button bindtap="createWord">生成报告</button>
+</view>
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

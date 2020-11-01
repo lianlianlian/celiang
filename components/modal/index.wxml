@@ -1,0 +1,5 @@
+<!--components/modal/index.wxml-->
+<view class='mark' hidden='{{hidden}}' bindtap='togger'></view>
+<view class='modal' hidden='{{hidden}}'>
+  <slot name='content'></slot>
+</view>

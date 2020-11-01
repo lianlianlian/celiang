@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "测量历史",
+  "usingComponents": {
+    "auth": "../../components/auth/index"
+  }
+}

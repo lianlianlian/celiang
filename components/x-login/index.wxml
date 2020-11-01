@@ -1,0 +1,4 @@
+<!--components/login/index.wxml-->
+<button class='login-btn' bindgetuserinfo='buttonLogin' open-type="getUserInfo" wx:if='{{show}}' hover-class='none'>
+  <slot name="login"></slot>
+</button>

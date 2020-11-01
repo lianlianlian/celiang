@@ -1,0 +1,63 @@
+<!--pages/bill/index.wxml-->
+<form bindsubmit="submit">
+  <view class='form-item group'>
+    <view class='label'>发票类型</view>
+    <view class='input-box'>
+      <input type='text' disabled value='电子普通发票'></input>
+    </view>
+  </view>
+  <view class='form-item'>
+    <view class='label'>发票内容</view>
+    <view class='input-box'>
+      <input type='text' disabled value='会员服务'></input>
+    </view>
+  </view>
+  <view class='form-item'>
+    <view class='label'>发票抬头</view>
+    <view class='input-box'>
+      <radio-group class="radio-group" bindchange="chooseType">
+        <label class="radio" wx:for="{{type}}" wx:key="{{index}}" name="radio-group">
+          <radio color='#004EA2' value="{{item.value}}" checked="{{typeIndex == item.value? true: false}}"/><text>{{item.name}}</text>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view wx:if="{{typeIndex == 1}}">
+    <view class='form-item'>
+      <view class='label'>姓名</view>
+      <view class='input-box'>
+        <input type='text' placeholder='请输入姓名' name="company"></input>
+      </view>
+    </view>
+  </view>
+  <view wx:else>                 
+    <view class='form-item'>
+      <view class='label'>单位名称</view>
+      <view class='input-box'>
+        <input type='text' placeholder='请输入单位名称' name="company"></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>纳税人识别号</view>
+      <view class='input-box'>
+        <input type='text' placeholder='请输入纳税人识别号' name="number"></input>
+      </view>
+    </view>
+  </view>
+  
+  <view class='form-item'>
+    <view class='label'>收票人手机</view>
+    <view class='input-box'>
+      <input type='number' placeholder='请输入收票人手机' name="phone" value='{{phone}}'></input>
+    </view>
+  </view>
+  <view class='form-item'>
+    <view class='label'>收票人邮箱</view>
+    <view class='input-box'>
+      <input type='text' placeholder='请输入收票人邮箱' name="email" value='{{email}}'></input>
+    </view>
+  </view>
+  <view class='submit-box'>
+    <button class='submit-btn' form-type="submit">确 定</button>
+  </view>
+</form>

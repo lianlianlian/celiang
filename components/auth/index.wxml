@@ -1,0 +1,4 @@
+<!--components/get-userinfo/index.wxml-->
+<view hidden='{{!show}}'>
+  <slot name="content"></slot>
+</view>

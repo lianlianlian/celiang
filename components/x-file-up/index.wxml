@@ -1,0 +1,4 @@
+<!--pages/components/x-file-up/index.wxml-->
+<view class='file' bindtap='file'>
+  <slot></slot>
+</view>

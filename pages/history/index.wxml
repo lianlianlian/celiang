@@ -1,0 +1,53 @@
+<!--pages/history/index.wxml-->
+<auth bind:auth="auth" id="auth">
+  <view slot="content">
+    <view class='nav'>
+      <block wx:for="{{nav}}" wx:key="{{index}}">
+        <view class='item {{id == index? "active":""}}' bindtap='nav' data-id='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+    </view>
+    <view class='list'>
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='item'>
+          <view class='item-title'>测量编号：{{item.measure_sn}}</view>
+          <view class='item-title'>测量关节：{{nav[item.joint]}}</view>
+          <view class='content'>
+            <view class='title'>受伤方式</view>
+            <view class='right'>{{type[item.mode]}}</view>
+          </view>
+          
+          <view>
+            <block wx:for="{{item.result}}" wx:for-item="subitem" wx:for-index="subindex" wx:key="{{subindex}}">
+              <view class='content'>
+                <!-- 单侧 -->
+                <view class='title' wx:if="{{item.mode == 1}}">{{nav[item.joint]}}关节功能丧失</view>
+                <!-- 双侧 -->
+                <view class='title' wx:if="{{item.mode == 2}}">{{subindex == 0 ? '左':'右'}}{{nav[item.joint]}}关节功能丧失</view>
+                <view class='right'>{{subitem}}</view>
+              </view>
+            </block>
+          </view>
+          
+          <view class='content'>
+            <view class='title'>测量时间</view>
+            <view class='right'>{{item.create_time}}</view>
+          </view>
+          <view class="bottom">
+            <button bindtap="createWord" data-title="{{nav[item.joint] + '关节损伤报告'}}" data-report="{{item.report_url}}">生成报告</button>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='overflow-hidden' wx:if="{{list.length === 0 && hidding}}">
+      <view class="weui-loadmore weui-loadmore_line">
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+      </view>
+    </view>
+  </view>
+</auth>
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

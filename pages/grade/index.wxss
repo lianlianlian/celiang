@@ -1,0 +1,105 @@
+/* pages/grade/index.wxss */
+.title{
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  line-height: 70rpx;
+  height: 70rpx;
+  background: #f5f5f5;
+}
+.options{
+  padding: 30rpx 20rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #dcdcdc;
+  background: #fff;
+}
+.options:last-of-type{
+  border-bottom: none;
+}
+.options .item-title{
+  position: relative;
+  color: #0c0451;
+}
+.options .item-title .down{
+  position: absolute;
+  bottom:-12px;
+  left:50%;
+  margin-left: -8rpx;
+  transform: translateX(-50%);
+}
+.options .item-content {
+  width: 165rpx;
+}
+.options .item-options,.options .item-options text {
+  flex: 1;
+  font-size: 13px;
+}
+.options .item-content,.options .item-options{
+  margin-left: 20rpx;
+  border: 1px solid #dcdcdc;
+  border-radius: 10rpx;
+}
+.options .item-content,.options .item-content input,.options .item-options{
+  line-height: 70rpx;
+  height: 70rpx;
+}
+.options .item-options{
+  padding-right: 10rpx;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  color: #999999;
+}
+.title .item-content,.options .item-content{
+  flex: 1;
+}
+.title .item-title,.options .item-title{
+  width: 80rpx;
+  text-align: left;
+}
+.bottom-options .item-title{
+  width: 285rpx;
+}
+.down{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-top: 13rpx;
+  border-top: 16rpx solid #c5c5c5;
+  border-bottom: 10rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+}
+.bottom{
+  margin-top: 10rpx;
+  padding: 20rpx 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+.bottom button{
+  text-align: center;
+  font-size: 16px;
+  background: #004EA2;
+  border-radius:10rpx;
+  line-height: 72rpx;
+  height: 72rpx;
+  flex: 1;
+  margin: 0 15rpx;
+  color: #fff;
+}
+.txt{
+  font-size: 13px;
+  color: #f66;
+  font-weight: normal;
+}
+.content{
+  padding: 0 20rpx;
+  color: #999;
+}

@@ -1,0 +1,56 @@
+<!--pages/login/index.wxml-->
+<view class='login-top top'>
+  <text>关节功能测量计算软件</text>
+  <view class='nav flex-between'>
+    <block wx:for="{{nav}}" wx:key="{{index}}">
+      <view class='item {{navIndex == index ? "active":""}}' bindtap='nav' data-index='{{index}}'>{{item}}</view>
+    </block>
+  </view>
+</view>
+<form bindsubmit="loginsubmit">
+  <swiper indicator-dots="{{false}}"
+    current="{{navIndex}}"
+    bindchange="changeLoginWay"
+    autoplay="{{false}}">
+      <swiper-item>
+        <view class='form-box'>
+          <view class='login-form'>
+            <image src='../../static/img/icon-login-1.png' class='icon-login'></image>
+            <input type='number' placeholder='请输入手机号' name="phone1" maxlength='11'></input>
+          </view>
+          <view class='login-form'>
+            <image src='../../static/img/icon-login-2.png' class='icon-login'></image>
+            <input type='password' maxlength='20' placeholder='请输入6~20位密码' name="password"></input>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class='form-box'>
+          <view class='login-form'>
+            <image src='../../static/img/icon-login-1.png' class='icon-login'></image>
+            <input type='number' placeholder='请输入手机号' name="phone2" bindinput='inputPhone' maxlength='11'></input>
+          </view>
+          <view class='login-form'>
+            <image src='../../static/img/icon-login-2.png' class='icon-login'></image>
+            <input type='number' placeholder='请输入验证码' name="code" maxlength='4'></input>
+            <x-code phone="{{phone2}}" type="2"></x-code>
+          </view>
+        </view>
+      </swiper-item>
+  </swiper>
+  <view class='submit-box'>
+    <button class='submit-btn' form-type="submit">登 录</button>
+  </view>
+</form>
+<view class='other-box flex-between'>
+  <navigator url='../register/index' hover-class='none' class='register'>新用户注册</navigator>
+  <navigator url='../reset-ps/index' hover-class='none' class='forger'>忘记密码？</navigator>
+</view>
+<view class='other-login'>
+  <view class='title'>
+    <text>微信登录</text>
+  </view>
+  <x-login bind:on-login="wxLogin">
+    <image src='../../static/img/icon-wx.png' class='img-wx' slot="login"></image>
+  </x-login>
+</view>

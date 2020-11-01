@@ -1,0 +1,2 @@
+<!--components/x-code/index.wxml-->
+<button bindtap='sendCode' class='code-btn'>{{times}}</button>

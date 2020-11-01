@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<auth bind:auth="auth" id="auth">
+  <view slot="content">
+    <view class='top'>
+      关节功能测量计算软件
+    </view>
+    <view class='middle'>
+      <block wx:for="{{kind}}" wx:key="{{index}}">
+        <view class='wrap'>
+          <view class='item' data-index='{{index}}' bindtap='chooseKind'>
+            <image src='{{index != kindIndex ? "../../static/img/icon-kind-" + (index+1) + ".png":"../../static/img/icon-kind-" + (index+1) + "-active.png"}}' class='icon-kind'></image>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='bottom'>
+      <view class='way-box flex-around'>
+        <block wx:for="{{way}}" wx:key="{{index}}">
+          <view class='item {{index == wayIndex ? "active":""}}' data-id='{{index}}' bindtap='chooseWay'>{{item}}</view>
+        </block>
+      </view>
+      <view class='submit-box'>
+        <button class='submit-btn' bindtap='goPage' data-page='../grade/index'>确认选择</button>
+      </view>
+    </view>
+  </view>
+</auth>

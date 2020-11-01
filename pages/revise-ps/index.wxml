@@ -1,0 +1,32 @@
+<!--pages/revise-ps/index.wxml-->
+<auth bind:auth="auth" id="auth">
+  <view slot="content">
+    <form bindsubmit="submit">
+      <view class='form-item group'>
+        <view class='label'>旧密码</view>
+        <view class='input-box'>
+          <input type='password' placeholder='请输入密码' name="oldValue"></input>
+        </view>
+      </view>
+      <view class='form-item'>
+        <view class='label'>新密码</view>
+        <view class='input-box'>
+          <input type='password' placeholder='请输入新密码' name="newValue"></input>
+        </view>
+      </view>
+      <view class='form-item'>
+        <view class='label'>确认密码</view>
+        <view class='input-box'>
+          <input type='password' placeholder='请再次确认密码' name="againValue"></input>
+        </view>
+      </view>
+      <view class='submit-box'>
+        <button class='submit-btn' form-type="submit">确认修改</button>
+      </view>
+    </form>
+  </view>
+</auth>
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

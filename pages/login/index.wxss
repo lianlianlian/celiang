@@ -1,0 +1,90 @@
+/* pages/login/index.wxss */
+page{
+  background: #fff;
+}
+.nav{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 118rpx;
+}
+.nav .item{
+  position: relative;
+  padding: 30rpx 0;
+}
+.nav .item.active::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 13rpx solid #fff;
+  border-right: 13rpx solid transparent;
+  border-top: 13rpx solid transparent;
+  border-left: 13rpx solid transparent;
+}
+.icon-login{
+  width: 36rpx;
+  height: 36rpx;
+}
+.form-box{
+  padding: 20rpx 60rpx 0 60rpx;
+}
+.login-form{
+  display: flex;
+  align-items: center;
+  /* padding: 50rpx 0 25rpx 0; */
+  height: 120rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.login-form input{
+  flex: 1;
+  padding-left: 30rpx;
+  font-size: 15px;
+}
+.other-box{
+  padding: 20rpx 80rpx;
+  font-size: 14px;
+}
+.other-box .register{
+  color: #0C0451;
+}
+.other-box .forget{
+  color: #666;
+}
+.other-login{
+  position: fixed;
+  bottom: 45rpx;
+  left: 0;
+  right: 0;
+}
+.other-login .title{
+  position: relative;
+  text-align: center;
+  color: #666;
+}
+.other-login .title::after{
+  position: absolute;
+  content: '';
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(to right, #fff, #0C0451,#fff);
+}
+.other-login .title text{
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.img-wx{
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 40rpx auto 0 auto;
+}

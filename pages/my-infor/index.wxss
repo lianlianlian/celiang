@@ -1,0 +1,20 @@
+/* pages/my-infor/index.wxss */
+.top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 285rpx;
+  background: #004EA2;
+  color: #fff;
+  font-size: 18px;
+}
+.my-img{
+  width: 129rpx;
+  height: 129rpx;
+  margin-bottom: 15rpx;
+  border-radius: 50%;
+}
+.submit-box{
+  margin-top: 100rpx;
+}

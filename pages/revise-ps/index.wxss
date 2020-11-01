@@ -1,0 +1,7 @@
+/* pages/revise-ps/index.wxss */
+.submit-box{
+  margin-top: 165rpx;
+}
+.form-item .label {
+  width: 160rpx;
+}

@@ -1,0 +1,4 @@
+/* pages/page-login/index.wxss */
+.submit-box{
+  margin: 100rpx 0;
+}

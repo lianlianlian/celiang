@@ -1,0 +1,7 @@
+/* pages/reset-ps/index.wxss */
+.form-item .label{
+  width: 180rpx;
+}
+.submit-box{
+  margin-top: 165rpx;
+}

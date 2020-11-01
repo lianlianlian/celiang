@@ -1,0 +1,13 @@
+/* pages/register/index.wxss */
+.submit-box{
+  margin-top: 25rpx;
+}
+.form-item .label{
+  width: 170rpx;
+}
+.pro-box{
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 14px;
+  color:rgba(153,153,153,1);
+}

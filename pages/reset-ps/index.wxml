@@ -1,0 +1,36 @@
+<!--pages/reset-ps/index.wxml-->
+<form bindsubmit="submit">
+  <view class='form-item group'>
+    <view class='label'>手机号</view>
+    <view class='input-box'>
+      <input type='number' placeholder='请输入手机号' name="phone" bindinput='inputPhone' maxlength='11'></input>
+    </view>
+    <x-code phone="{{phone}}" type="3"></x-code>
+  </view>
+  <view class='form-item'>
+    <view class='label'>验证码</view>
+    <view class='input-box'>
+      <input type='number' placeholder='请输入验证码' name="code" maxlength='4'></input>
+    </view>
+  </view>
+  <view class='form-item'>
+    <view class='label'>新密码</view>
+    <view class='input-box'>
+      <input type='password' placeholder='6~20位密码' name="password"></input>
+    </view>
+  </view>
+  <view class='form-item'>
+    <view class='label'>确认新密码</view>
+    <view class='input-box'>
+      <input type='password' placeholder='请再次确认密码' name="againPassword"></input>
+    </view>
+  </view>
+  <view class='submit-box'>
+    <button class='submit-btn' form-type="submit">完 成</button>
+  </view>
+</form>
+
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

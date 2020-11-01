@@ -1,0 +1,58 @@
+<!--pages/my-infor/index.wxml-->
+<auth bind:auth="auth" id="auth">
+  <view slot="content">
+    <view class='top'>
+      <x-file-up count="0" bind:on-file='filesuccess'>
+        <image src='{{form.avatar || "../../static/img/default_my.png"}}' class='my-img' mode='aspectFill'></image>
+      </x-file-up>
+      <view class='name'>{{form.username}}</view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>名称</view>
+      <view class='input-box'>
+        <input type='text' placeholder='请输入名称' placeholder-class='place-class' bindinput='inputNickname' value='{{form.nickname}}'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>单位</view>
+      <view class='input-box'>
+        <input type='text' placeholder='请输入单位' placeholder-class='place-class' bindinput='inputCompany' value='{{form.company}}' disabled='{{form.company_id > 0 ? true : false}}'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>邮箱</view>
+      <view class='input-box'>
+        <input type='text' placeholder='请输入邮箱' placeholder-class='place-class' bindinput='inputEmail' value='{{form.email}}'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>性别</view>
+      <view class='input-box' bindtap='chooseSex'>
+        {{sex[form.gender]}}
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>生日</view>
+      <view class='input-box'>
+        <picker mode="date" value="{{form.birthday}}" start="2015-09-01" end="2017-09-01" bindchange="chooseDate">
+        <text class='{{form.birthday ? "" : "place-class"}}'>{{form.birthday ? form.birthday : '请选择生日'}}</text>
+      </picker>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='label'>地区</view>
+      <view class='input-box'>
+        <picker mode="region" bindchange="chooseCity" value="{{form.region}}">
+        <text class='{{form.region.length > 0 ? "" : "place-class"}}'>{{form.region.length > 0 ? form.region : '请选择地区'}}</text>
+      </picker>
+      </view>
+    </view>
+    <view class='submit-box'>
+      <button class='submit-btn' bindtap='submit'>保存</button>
+    </view>
+  </view>
+</auth>
+<!-- 加载动画 -->
+<view class="loading-box" hidden="{{hidding}}">
+    <loading>加载中...</loading>
+</view>

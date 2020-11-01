@@ -1,0 +1,68 @@
+/* pages/history/index.wxss */
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 10;
+}
+.nav .item{
+  flex: 1;
+  height: 100%;
+  border-bottom: 2px solid transparent;
+  font-size: 16px;
+}
+.nav .item.active{
+  border-bottom: 2px solid #0C0451;
+  color: #0C0451;
+}
+.list{
+  padding: 110rpx 30rpx 30rpx 30rpx;
+}
+.list .item{
+  position: relative;
+  background: #fff;
+  padding: 0 32rpx 20rpx 32rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+.list .item::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 8rpx;
+  top: 0;
+  bottom: 0;
+  background:rgba(12,4,81,0.5);
+  border-radius: 10rpx 0 0 10rpx;
+}
+.list .item-title{
+  padding: 25rpx 0;
+  font-size: 16px;
+  border-bottom: 1px solid #f3f3f3;
+}
+.list .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25rpx 0;
+}
+.list .content .title{
+  color: #666;
+}
+.list .bottom button{
+  text-align: center;
+  font-size: 16px;
+  background: #004EA2;
+  border-radius:10rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  margin: 0 15rpx;
+  color: #fff;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "忘记密码",
+  "usingComponents": {
+    "x-code": "../../components/x-code/index"
+  }
+}

@@ -1,0 +1,21 @@
+<!--pages/detail/index.wxml-->
+<web-view src="{{src}}"></web-view>
+<!-- <view class='top-box'>
+  <view class='img-box'>
+    <image src='../../static/img/img-1.png' class='img'></image>
+  </view>
+  <view class='img-box'>
+    <image src='../../static/img/img-2.png' class='img'></image>
+  </view>
+</view>
+<view class='bottom-box'>
+  <view class='type-box'>
+    <block wx:for="{{type}}" wx:key="{{index}}">
+      <view class='item'>{{item}}</view>
+    </block>
+  </view>
+  <view class='content'>
+    <view class='title'>测量方法</view>
+    <text>前面画一条双侧髋前上棘的连线，量角器轴心们于髋关节上，固定臂平行于双侧髋前上棘的连线，活动臂平行于股骨中线。</text>
+  </view>
+</view> -->
